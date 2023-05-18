@@ -9,7 +9,11 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 
 db.authenticate()
-    .then(() => console.log('Connection successfully with database'))
+    .then(() => console.log('Connection Data Base successfully'))
+    .catch((err) => console.error(err));
+
+db.sync()
+    .then(() => console.log('Sincronice Data Base successfully'))
     .catch((err) => console.error(err));
 
 app.use(express.json());
