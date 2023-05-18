@@ -2,17 +2,20 @@ const db = require('./src/config/connection');
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const initModels = require('./src/models/initModels');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 8000;
 
 const app = express();
 
+initModels()
+
 db.authenticate()
     .then(() => console.log('Connection Data Base successfully'))
     .catch((err) => console.error(err));
 
-db.sync()
+db.sync({ force: true })
     .then(() => console.log('Sincronice Data Base successfully'))
     .catch((err) => console.error(err));
 
