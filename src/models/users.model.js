@@ -5,7 +5,7 @@ const User = db.define('users', {
     userName: {
         type: DataTypes.STRING(100),
         allowNull: false,
-        unique: true,
+        field: 'user_name'
     },
     email: {
         type: DataTypes.STRING,
@@ -24,7 +24,9 @@ const User = db.define('users', {
     }
 },
 {
-    timestamps: false,
+    timestamps: true,
+    createdAt: 'created_at',
+    updatedAt: false
 })
 
 module.exports = User;
