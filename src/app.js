@@ -1,7 +1,8 @@
-const userRoutes = require('./src/routes/users.routes');
-const categoryRoutes = require('./src/routes/category.routes');
-const initModels = require('./src/models/initModels');
-const db = require('./src/config/connection');
+const categoryRoutes = require('./routes/category.routes');
+const userRoutes = require('./routes/users.routes');
+const tasksRoutes = require('./routes/task.routes');
+const initModels = require('./models/initModels');
+const db = require('./config/connection');
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -26,6 +27,7 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(userRoutes);
 app.use(categoryRoutes);
+app.use(tasksRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server on line and listening on port ${PORT}`);
