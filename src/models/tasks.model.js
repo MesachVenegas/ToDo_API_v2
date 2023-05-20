@@ -8,7 +8,7 @@ const Task = db.define('tasks', {
     },
     description: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
     },
     isCompleted: {
         type: DataTypes.BOOLEAN,
@@ -23,12 +23,12 @@ const Task = db.define('tasks', {
     categoryId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: 1,
+        defaultValue: 'otros',
         field: 'category_id'
     },
     subCategoryId: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         field: 'sub_category_id'
     },
 },{
