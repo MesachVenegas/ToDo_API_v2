@@ -23,7 +23,6 @@ const Task = db.define('tasks', {
     categoryId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: 'otros',
         field: 'category_id'
     },
     subCategoryId: {
