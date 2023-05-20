@@ -14,7 +14,7 @@ class UserService {
     static async getUsers() {
         try {
             const result = await User.findAll({
-                attributes: ['user_name','email','created_at']
+                attributes: ['userName','email','created_at']
             });
             return result;
         } catch (error) {
