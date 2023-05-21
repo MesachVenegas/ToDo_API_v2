@@ -46,7 +46,11 @@ class UserService {
 
     static async getUser(id) {
         try {
-            const result = await User.findByPk(id);
+            const result = await User.findByPk(id, {
+                attributes: {
+                    exclude: ['password']
+                }
+            });
             return result;
         } catch (error) {
             throw error;
