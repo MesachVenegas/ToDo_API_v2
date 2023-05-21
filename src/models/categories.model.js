@@ -3,13 +3,12 @@ const db = require('../config/connection');
 
 
 const Category = db.define('categories', {
-    category: {
+    name: {
         type: DataTypes.STRING(100),
         allowNull: false,
     },
     description: {
         type: DataTypes.TEXT,
-        allowNull: false,
     }
 },{
     timestamps: false,
