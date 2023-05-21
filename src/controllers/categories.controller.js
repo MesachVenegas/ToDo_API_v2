@@ -4,7 +4,7 @@ const createCategory = async (req, res) => {
     try {
         const data = req.body;
         const response = await CategoryService.create(data)
-        res.json(response)
+        res.status(201).json(response)
     } catch (error) {
         res.json(error)
     }
