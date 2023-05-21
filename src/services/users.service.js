@@ -14,7 +14,7 @@ class UserService {
     static async getUsers() {
         try {
             const result = await User.findAll({
-                attributes: ['userName','email','created_at']
+                attributes: ['id', 'userName', 'email', 'created_at']
             });
             return result;
         } catch (error) {
@@ -22,7 +22,7 @@ class UserService {
         }
     }
 
-    static async update ( id , newData) {
+    static async update(id, newData) {
         try {
             const result = await User.update(newData, {
                 where: { id: id },
@@ -33,7 +33,7 @@ class UserService {
         }
     }
 
-    static async delete (id) {
+    static async delete(id) {
         try {
             const result = await User.destroy({
                 where: { id: id }
