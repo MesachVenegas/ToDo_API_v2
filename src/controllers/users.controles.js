@@ -21,6 +21,16 @@ const getAllUsers = async (req, res) => {
     }
 }
 
+const getOneUser = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const user = await UserService.getUser(id);
+        res.json(user);
+    } catch (error) {
+        res.json(error);
+    }
+}
+
 const updateUser = async (req, res) => {
     try {
         const { id } = req.params;
@@ -48,5 +58,6 @@ module.exports = {
     createNewUser,
     getAllUsers,
     updateUser,
-    deleteUser
+    deleteUser,
+    getOneUser
 }
