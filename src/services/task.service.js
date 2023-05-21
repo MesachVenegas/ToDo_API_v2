@@ -1,6 +1,5 @@
 const Task = require('../models/tasks.model');
 const Category = require('../models/categories.model');
-const SubCategory = require('../models/subcategories.model');
 const User = require('../models/users.model');
 
 class TaskService {
@@ -19,7 +18,7 @@ class TaskService {
             const result = await Task.findAll({
                 where: { user_id: id },
                 attributes: {
-                    exclude: [ 'userId',  'categoryId', 'subCategoryId']
+                    exclude: [ 'userId',  'categoryId']
                 },
                 include: [
                     {
@@ -30,10 +29,6 @@ class TaskService {
                     },
                     {
                         model: Category,
-                        attributes: ['category', 'description']
-                    },
-                    {
-                        model: SubCategory,
                     }
                 ]
             });
