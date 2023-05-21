@@ -24,12 +24,7 @@ const Task = db.define('tasks', {
         type: DataTypes.INTEGER,
         allowNull: false,
         field: 'category_id'
-    },
-    subCategoryId: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        field: 'sub_category_id'
-    },
+    }
 },{
     timestamps: true,
     createdAt: 'created_at',
