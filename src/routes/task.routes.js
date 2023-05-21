@@ -4,12 +4,12 @@ const { getUserTasks, createNewTask, userCompleteTask, deleteTask } = require('.
 const routes = Router();
 
 
-routes.get('/task/:user', getUserTasks);
+routes.get('/api/v2/task/:user', getUserTasks);
 
-routes.post('/task', createNewTask);
+routes.post('/api/v2/task', createNewTask);
 
-routes.put('/task/:id', userCompleteTask)
+routes.put('/api/v2/task/:id', userCompleteTask)
 
-routes.delete('/task/:id', deleteTask)
+routes.delete('/api/v2/task/:id', deleteTask)
 
 module.exports = routes;
