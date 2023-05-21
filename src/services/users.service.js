@@ -3,7 +3,11 @@ const User = require('../models/users.model');
 class UserService {
     static async createUser(newUser) {
         try {
-            const result = await User.create(newUser);
+            const result = await User.create(newUser, {
+                attributes: {
+                    exclude: ['password'],
+                }
+            });
             console.log(result)
             return result
         } catch (error) {
